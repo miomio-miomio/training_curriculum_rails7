@@ -1,3 +1,5 @@
+<%# app\views\calendars\index.html.erb %>
+
 <div>
   <%= form_with model: @plan, url: calendars_path, class: 'form' do |f| %>
     <%= f.label :日付を選択, class: 'label' %>
@@ -12,7 +14,8 @@
     <% @week_days.each do |day| %>
       <div class='item'>
         <div class='date'>
-        <%= "#{day[:month]}/#{day[:date]}" %>
+        <%# <%= "#{day[:month]}/#{day[:date]}" %>
+        <%= "#{day[:month]}/#{day[:date]} #{day[:wday]}" %>
         </div>
         <ul class='content'>
         <% if day[:plans].length != 0 %>
